@@ -1,0 +1,16 @@
+.film-details__meta {
+  display: flex;
+  gap: 2.6rem;
+  flex-direction: column;
+  @media (min-width: 60rem) {
+    flex-direction: row;
+  }
+}
+
+.film-details__meta-image {
+  min-inline-size: 17rem;
+}
+
+.film-details__video-link {
+  position: relative;
+}

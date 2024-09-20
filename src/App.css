@@ -1,0 +1,36 @@
+[data-theme] {
+  background: var(--page-background);
+  color: var(--text-colour);
+  font-size: var(--font-size-1);
+  padding: 1.6rem;
+  @media (min-width: 77.8rem) {
+    padding: 3.6rem;
+    max-width: 113.6rem;
+    margin: 0 auto;
+  }
+}
+
+html:has([data-theme]) {
+  background: var(--page-background);
+}
+
+[data-theme] a {
+  color: var(--link-colour);
+  text-decoration: underline 0.15rem var(--link-colour);
+  transition: text-decoration-thickness 150ms, color 150ms;
+  padding: 1rem 0;
+  @media (min-width: 77.8rem) {
+    padding: 0;
+  }
+}
+
+[data-theme] a:hover,
+[data-theme] a:focus {
+  color: var(--link-interacted-colour);
+  text-decoration-thickness: 0.5rem;
+}
+
+.page {
+  max-inline-size: 102.4rem;
+  margin: 0 auto;
+}

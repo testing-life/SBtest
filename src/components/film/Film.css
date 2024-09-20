@@ -1,0 +1,16 @@
+.film {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.film__header {
+  margin-block-end: auto;
+}
+
+.film__rating {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  margin-block-end: 1rem;
+}

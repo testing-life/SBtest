@@ -1,0 +1,13 @@
+.form-layout {
+  inline-size: 100%;
+}
+
+.form-layout__child {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.6rem;
+}
+
+.form-layout__child:not(:last-child) {
+  margin-block-end: 3.2rem;
+}

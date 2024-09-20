@@ -1,0 +1,71 @@
+:root:has([data-theme='default']) {
+  --button-colour: rgba(var(--blinding-snow), 1);
+  --button-bg: rgba(var(--soft-coral), 1);
+  --button-interacted-colour: rgba(var(--charcoal-grey), 1);
+  --button-interacted-bg: rgba(var(--warm-yellow), 1);
+  --button-icon-colour: rgba(var(--charcoal-grey), 1);
+  --button-icon-interacted-colour: rgba(var(--cool-grey), 1);
+  --input-bg: rgba(var(--soft-coral), 1);
+  --input-stroke: rgba(var(--fine-yellow), 1);
+  --text-colour: rgba(var(--charcoal-grey), 1);
+  --page-background: rgba(var(--pale-peach), 1);
+  --card-background: rgba(var(--cool-grey), 1);
+  --link-colour: rgba(var(--soft-coral), 1);
+  --link-interacted-colour: rgba(var(--charcoal-grey), 1);
+  --alert: rgba(var(--fiery-future), 1);
+  --invalid: rgba(var(--fiery-future), 1);
+  --valid: rgba(var(--fiddlers-green), 1);
+  --spinner-detail: rgba(var(--fine-yellow), 1);
+  --spinner-border: rgba(var(--charcoal-grey), 1);
+  --rating-colour: rgba(var(--june-bud), 1);
+  --gradient-1: rgba(var(--fine-yellow), 1);
+  --gradient-2: rgba(var(--warm-yellow), 1);
+  --font-size: rgba(var(--font-size-1), 1);
+  --h1-font-size: var(--font-size-3);
+  --h2-font-size: var(--font-size-2);
+  --h3-font-size: var(--font-size-1);
+  --heading-weight: var(--extrabold-weight);
+  --card-shadow: rgba(var(--charcoal-grey), 0.5);
+  --details-summary-bg: rgba(var(--soft-mint), 1);
+  --details-content-bg: rgba(var(--soft-mint), 1);
+  --details-marker-colour: rgba(var(--charcoal-grey), 1);
+  --details-marker-active-colour: rgba(var(--charcoal-grey), 1);
+  --highlight-text: rgba(var(--soft-mint), 1);
+  --highlight-bg: rgba(var(--charcoal-grey), 1);
+  @media (min-width: 77.8rem) {
+    --h1-font-size: var(--font-size-4);
+    --h2-font-size: var(--font-size-3);
+    --h3-font-size: var(--font-size-2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    --button-colour: rgba(var(--charcoal-grey), 1);
+    --button-bg: rgba(var(--soft-mint), 1);
+    --button-interacted-colour: rgba(var(--charcoal-grey), 1);
+    --button-interacted-bg: rgba(var(--warm-yellow), 1);
+    --button-icon-colour: rgba(var(--fine-yellow), 1);
+    --button-icon-interacted-colour: rgba(var(--cool-grey), 1);
+    --input-bg: rgba(var(--charcoal-grey), 1);
+    --input-stroke: rgba(var(--fine-yellow), 1);
+    --text-colour: rgba(var(--pale-peach), 1);
+    --page-background: rgba(var(--charcoal-grey), 1);
+    --card-background: rgba(var(--fine-yellow), 0.3);
+    --card-shadow: rgba(var(--cool-grey), 0.15);
+    --link-colour: rgba(var(--soft-mint), 1);
+    --link-interacted-colour: rgba(var(--warm-yellow), 1);
+    --alert: rgba(var(--fiery-future), 1);
+    --invalid: rgba(var(--fiery-future), 1);
+    --valid: rgba(var(--fiddlers-green), 1);
+    --spinner-detail: rgba(var(--fine-yellow), 1);
+    --spinner-border: rgba(var(--soft-mint), 1);
+    --rating-colour: rgba(var(--charcoal-grey), 1);
+    --gradient-1: rgba(var(--charcoal-grey), 0.3);
+    --gradient-2: rgba(var(--cool-grey), 1);
+    --details-summary-bg: rgba(var(--cool-grey), 0.1);
+    --details-content-bg: rgba(var(--cool-grey), 0.1);
+    --details-marker-colour: rgba(var(--soft-mint), 1);
+    --details-marker-active-colour: rgba(var(--warm-yellow), 1);
+    --highlight-text: rgba(var(--fine-yellow), 1);
+    --highlight-bg: rgba(var(--soft-mint), 0.35);
+  }
+}

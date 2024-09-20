@@ -1,0 +1,33 @@
+.btn {
+  border-radius: 1.2rem;
+  border: none;
+  padding: 1.8rem 2.2rem;
+  text-align: center;
+  background: var(--button-bg);
+  color: var(--button-colour);
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  background: var(--button-interacted-bg);
+  color: var(--button-interacted-colour);
+}
+
+.-full-width {
+  inline-size: 100%;
+}
+
+.-is-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  color: var(--);
+}
+
+.-is-icon > svg {
+  inline-size: 20px;
+}

@@ -1,0 +1,21 @@
+:root {
+  --default-weight: 400;
+  --semibold-weight: 600;
+  --extrabold-weight: 800;
+  --ratio: 1.5;
+  --font-size-0: 1rem;
+  --font-size-1: calc(var(--font-size-0) * var(--ratio));
+  --font-size-2: calc(var(--font-size-1) * var(--ratio));
+  --font-size-3: calc(var(--font-size-2) * var(--ratio));
+  --font-size-4: calc(var(--font-size-3) * var(--ratio));
+  --font-size-5: calc(var(--font-size-4) * var(--ratio));
+}
+
+html {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: var(--default-weight);
+  font-style: normal;
+  font-size: 62.5%;
+  line-height: 2.7rem;
+}

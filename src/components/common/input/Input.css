@@ -1,0 +1,45 @@
+input {
+  background-color: var(--input-bg);
+  border: 0.1rem solid var(--input-stroke);
+  padding: 1.8rem 2.4rem;
+  border-radius: 1.2rem;
+  inline-size: 100%;
+  color: var(--text-colour);
+}
+
+input::placeholder {
+  color: var(--text-colour);
+}
+
+.input-wrapper {
+  inline-size: 100%;
+}
+
+.-is-valid {
+  box-shadow: 0 0 0 0.2rem var(--valid);
+  color: var(--valid);
+}
+
+.-is-invalid {
+  box-shadow: 0 0 0 0.2rem var(--invalid);
+  color: var(--invalid);
+}
+
+.-has-clear-button {
+  position: relative;
+}
+
+.-has-clear-button .btn.-is-icon {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  height: 70%;
+  padding: 0 1rem;
+  color: var(--button-icon-colour);
+}
+
+.-has-clear-button .btn.-is-icon:hover,
+.-has-clear-button .btn.-is-icon:focus {
+  color: var(--button-icon-interacted-colour);
+  background: transparent;
+}

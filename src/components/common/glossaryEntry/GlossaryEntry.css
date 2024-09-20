@@ -1,0 +1,16 @@
+.glossary-entry {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.glossary-entry:not(:last-child) {
+  margin-block-end: 0.8rem;
+}
+
+.glossary-entry__term {
+  font-weight: var(--semibold-weight);
+}
+
+.glossary-entry__term:after {
+  content: ':';
+}
