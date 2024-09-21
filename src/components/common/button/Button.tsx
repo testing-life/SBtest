@@ -5,6 +5,7 @@ interface Props {
   children: ReactNode;
   fullWidth?: boolean;
   classes?: string;
+  disabled?: boolean;
   ariaLabel?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
   variant?: undefined | 'icon';
@@ -18,12 +19,14 @@ const Button: FC<Props> = ({
   clickHandler,
   variant,
   ariaLabel,
+  disabled,
   classes = '',
 }) => {
   return (
     <button
       onClick={clickHandler}
       type={type}
+      disabled={disabled}
       aria-label={ariaLabel}
       className={`btn ${classes ? classes : ''} ${
         fullWidth ? '-full-width' : ''

@@ -21,9 +21,9 @@ export type FilmItemDetails = {
   trailer: string;
 };
 
-export type Props = {
+interface Props {
   details: FilmItemDetails;
-};
+}
 
 const FilmDetails: FC<Props> = ({ details }) => {
   const { title, rating, year, image_url, description, trailer, plot, gen } =

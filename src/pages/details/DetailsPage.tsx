@@ -15,10 +15,9 @@ const DetailsPage = () => {
   } = useLocation();
   const { filmDetails, loading, error, fetchFilmDetails } = useFilmsStore();
 
-  const memoisedFetchFilmDetails = useCallback(
-    (id: string) => fetchFilmDetails(id),
-    [fetchFilmDetails]
-  );
+  const memoisedFetchFilmDetails = useCallback(fetchFilmDetails, [
+    fetchFilmDetails,
+  ]);
 
   useEffect(() => {
     if (imdbId && filmDetails?.imdb_id !== imdbId) {

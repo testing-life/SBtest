@@ -1,13 +1,20 @@
 import { FilmItemDetails } from 'components/filmDetails/FilmDetails';
 import { API_URL_HOST } from 'consts/apiUrl';
+import { Film } from 'stores/film.store';
 
-export type FilmsFetchResponse = {
+export interface FilmsFetchResponse {
   links: {};
   count: number;
-  results: [];
-};
+  results: Film[];
+}
 
-export type FilmDetailsResponse = { results: FilmItemDetails };
+export interface FilmDetailsResponse {
+  results: FilmItemDetails;
+}
+
+export interface FilmByTitleResponse {
+  results: Pick<Film, 'imdb_id' | 'title'>[];
+}
 
 export const FilmsFetchHeaders = {
   headers: {

@@ -22,7 +22,9 @@ const SearchBar: FC<Props> = ({ onSubmit }) => {
     <FormLayout
       onSubmit={(e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        onSubmit(term);
+        if (term) {
+          onSubmit(term);
+        }
       }}
     >
       <>
@@ -32,9 +34,11 @@ const SearchBar: FC<Props> = ({ onSubmit }) => {
           hasClearButton
           onClear={clearInput}
           value={term}
-          onChange={(value: string) => setTerm(value)}
+          onChange={setTerm}
         />
-        <Button type='submit'>Search</Button>
+        <Button disabled={!term} type='submit'>
+          Search
+        </Button>
       </>
     </FormLayout>
   );

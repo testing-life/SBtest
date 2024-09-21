@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import './Rating.css';
 
-type Props = {
+interface Props {
   value: number;
-};
+}
 
 const Rating: FC<Props> = ({ value }) => {
   return <span className='rating'>{value}</span>;

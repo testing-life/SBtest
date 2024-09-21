@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import './Text.css';
 
-type Props = {
+interface Props {
   styleAs?: 'h1' | 'h2' | 'h3';
   renderAs?: 'h1' | 'h2' | 'h3' | 'error';
   text: string;
   classes?: string;
-};
+}
 
 const Text: FC<Props> = ({ styleAs, renderAs, text, classes }) => {
   const renderElement = () => {

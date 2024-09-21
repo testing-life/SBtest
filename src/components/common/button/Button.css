@@ -7,8 +7,8 @@
   color: var(--button-colour);
 }
 
-.btn:hover,
-.btn:focus {
+.btn:not([disabled]):hover,
+.btn:not([disabled]):focus {
   cursor: pointer;
   background: var(--button-interacted-bg);
   color: var(--button-interacted-colour);
@@ -30,4 +30,8 @@
 
 .-is-icon > svg {
   inline-size: 20px;
+}
+
+.btn[disabled] {
+  opacity: 0.5;
 }

@@ -2,10 +2,11 @@ import React, { FC } from 'react';
 import './Details.css';
 import Text from 'components/common/text/Text';
 
-type Props = {
+interface Props {
   title: string;
   content: string;
-};
+}
+
 const Details: FC<Props> = ({ title, content }) => {
   return (
     <details className='details'>

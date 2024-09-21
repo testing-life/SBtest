@@ -3,9 +3,9 @@ import Pill from 'components/common/pill/Pill';
 import React, { FC } from 'react';
 import './Pills.css';
 
-type Props = {
+interface Props {
   labels: Genre[];
-};
+}
 
 const Pills: FC<Props> = ({ labels }) => {
   return labels.length ? (

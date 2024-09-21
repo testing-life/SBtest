@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import './Pill.css';
 
-type Props = {
+interface Props {
   label: string;
-};
+}
 
 const Pill: FC<Props> = ({ label }) => {
   return <span className='pill'>{label}</span>;

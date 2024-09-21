@@ -1,5 +1,4 @@
 import Text from 'components/common/text/Text';
-import './HomePage.css';
 import useFilmsStore from 'stores/film.store';
 import SearchBar from 'components/common/searchBar/SearchBar';
 import Films from 'components/films/Films';

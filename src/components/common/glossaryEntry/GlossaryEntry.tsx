@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import './GlossaryEntry.css';
 
-type Props = {
+interface Props {
   term: string;
   definition: string | number;
-};
+}
 
 const GlossaryEntry: FC<Props> = ({ term, definition }) => {
   return (
