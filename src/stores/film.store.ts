@@ -1,30 +1,28 @@
 import axios from 'axios';
-import { FilmItemDetails } from 'components/filmDetails/FilmDetails';
+import { FilmItemDetails } from 'types/filmTypes';
 import {
   GET_FILMS_BY_RATING,
   GET_FILM_BY_TITLE,
   GET_FILM_DETAILS,
 } from 'consts/apiUrl';
+import { Film } from 'types/filmTypes';
 import {
   FilmByTitleResponse,
   FilmDetailsResponse,
-  FilmsFetchHeaders,
   FilmsFetchResponse,
-} from 'utils/fetchingUtils';
+} from 'types/filmTypes';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-
-export type Film = {
-  imdb_id: string;
-  rating?: number;
-  title: 'string';
-};
+import { FilmsFetchHeaders } from 'consts/requestConfig';
 
 type State = {
   films: Film[] | Pick<Film, 'imdb_id' | 'title'>[];
   filmDetails: FilmItemDetails | undefined;
   loading: boolean;
   error: string;
+  filter: {
+    title: string;
+  };
 };
 
 type Action = {
@@ -40,8 +38,9 @@ const useFilmsStore = create<State & Action>()(
       loading: false,
       error: '',
       filmDetails: undefined,
+      filter: { title: '' },
       fetchFilms: async () => {
-        set({ loading: true, error: '' });
+        set({ loading: true, error: '', filter: { title: '' } });
         const response = await axios
           .get<FilmsFetchResponse>(GET_FILMS_BY_RATING, FilmsFetchHeaders)
           .catch((error) => set({ error: error.message }))
@@ -60,7 +59,7 @@ const useFilmsStore = create<State & Action>()(
           .catch((error) => set({ error: error.message }))
           .finally(() => set({ loading: false }));
         if (response) {
-          set({ films: response.data.results });
+          set({ films: response.data.results, filter: { title } });
         }
       },
       fetchFilmDetails: async (imdbId: string) => {

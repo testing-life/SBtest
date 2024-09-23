@@ -6,20 +6,7 @@ import './FilmDetails.css';
 import Details from 'components/common/details/Details';
 import Pills from 'components/common/pills/Pills';
 import './FilmDetails.css';
-
-export type Genre = { id: number; genre: string };
-
-export type FilmItemDetails = {
-  imdb_id: string;
-  title: string;
-  rating: number;
-  year: string;
-  image_url: string;
-  description: string;
-  plot: string;
-  gen: Genre[];
-  trailer: string;
-};
+import { FilmItemDetails } from 'types/filmTypes';
 
 interface Props {
   details: FilmItemDetails;
@@ -46,10 +33,10 @@ const FilmDetails: FC<Props> = ({ details }) => {
               <GlossaryEntry term='Plot' definition={plot} />
             </Glossary>
           </div>
-          <a target='_blank' href={trailer} rel='noreferrer'>
-            Watch {title} trailer on YouTube
-          </a>
-          <Details content={description} title={`${title} description`} />
+          <div className='-mb-24'>
+            <Details content={description} title={`${title} description`} />
+          </div>
+          <embed className='film-details__embed -mb-24' src={trailer}></embed>
         </div>
       </div>
     </article>

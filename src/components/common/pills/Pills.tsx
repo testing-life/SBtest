@@ -1,4 +1,4 @@
-import { Genre } from 'components/filmDetails/FilmDetails';
+import { Genre } from 'types/filmTypes';
 import Pill from 'components/common/pill/Pill';
 import React, { FC } from 'react';
 import './Pills.css';

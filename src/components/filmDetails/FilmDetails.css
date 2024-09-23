@@ -14,3 +14,8 @@
 .film-details__video-link {
   position: relative;
 }
+
+.film-details__embed {
+  inline-size: 100%;
+  block-size: 100%;
+}

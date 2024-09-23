@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Film.css';
 import { DETAILS } from 'consts/routes';
 import Rating from 'components/rating/Rating';
-import { Film as IFilm } from 'stores/film.store';
+import { Film as IFilm } from 'types/filmTypes';
 
 interface Props {
   film: IFilm;

@@ -4,7 +4,11 @@ import SearchBar from 'components/common/searchBar/SearchBar';
 import Films from 'components/films/Films';
 
 const HomePage = () => {
-  const { fetchFilms, fetchFilmsByTitle } = useFilmsStore();
+  const {
+    filter: { title },
+    fetchFilms,
+    fetchFilmsByTitle,
+  } = useFilmsStore();
 
   const submitHandler = (term: string) => {
     if (term.length) {
@@ -16,7 +20,10 @@ const HomePage = () => {
 
   return (
     <section className='page'>
-      <Text renderAs='h1' text='Films' />
+      <Text
+        renderAs='h1'
+        text={`Films By ${title ? 'Title ' : 'IMDB rating'}`}
+      />
       <div className='-mb-24'>
         <SearchBar onSubmit={submitHandler} />
       </div>

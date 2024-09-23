@@ -2,20 +2,21 @@ import Card from 'components/common/card/Card';
 import Spinner from 'components/common/spinner/Spinner';
 import Film from 'components/film/Film';
 import Text from 'components/common/text/Text';
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import useFilmsStore from 'stores/film.store';
 import './Films.css';
+import { hasTruthyProperties } from 'utils/object';
 
 const Films = () => {
-  const { films, loading, error, fetchFilms } = useFilmsStore();
+  const { filter, films, loading, error, fetchFilms } = useFilmsStore();
 
-  const memoisedFetchFilms = useCallback(fetchFilms, [fetchFilms]);
+  const memoisedFilter = useMemo(() => filter, [JSON.stringify(filter)]);
 
   useEffect(() => {
-    if (!films.length) {
-      memoisedFetchFilms();
+    if (!films?.length && !hasTruthyProperties<typeof filter>(memoisedFilter)) {
+      fetchFilms();
     }
-  }, [films.length, memoisedFetchFilms]);
+  }, [films.length, fetchFilms, memoisedFilter]);
 
   return (
     <>

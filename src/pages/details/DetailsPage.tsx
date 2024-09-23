@@ -1,13 +1,12 @@
-import FilmDetails, {
-  FilmItemDetails,
-} from 'components/filmDetails/FilmDetails';
+import FilmDetails from 'components/filmDetails/FilmDetails';
 import Spinner from 'components/common/spinner/Spinner';
 import { HOME } from 'consts/routes';
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import useFilmsStore from 'stores/film.store';
 import Text from 'components/common/text/Text';
+import { FilmItemDetails } from 'types/filmTypes';
 
 const DetailsPage = () => {
   const {
@@ -15,15 +14,11 @@ const DetailsPage = () => {
   } = useLocation();
   const { filmDetails, loading, error, fetchFilmDetails } = useFilmsStore();
 
-  const memoisedFetchFilmDetails = useCallback(fetchFilmDetails, [
-    fetchFilmDetails,
-  ]);
-
   useEffect(() => {
     if (imdbId && filmDetails?.imdb_id !== imdbId) {
-      memoisedFetchFilmDetails(imdbId);
+      fetchFilmDetails(imdbId);
     }
-  }, [imdbId, filmDetails?.imdb_id, memoisedFetchFilmDetails]);
+  }, [imdbId, filmDetails?.imdb_id, fetchFilmDetails]);
 
   return (
     <section className='page'>

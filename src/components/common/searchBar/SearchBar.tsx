@@ -2,13 +2,17 @@ import React, { FC, FormEvent, useState } from 'react';
 import FormLayout from '../formLayout/FormLayout';
 import Input from '../input/Input';
 import Button from '../button/Button';
+import useFilmsStore from 'stores/film.store';
 
 interface Props {
   onSubmit: (term: string) => void;
 }
 
 const SearchBar: FC<Props> = ({ onSubmit }) => {
-  const [term, setTerm] = useState('');
+  const {
+    filter: { title },
+  } = useFilmsStore();
+  const [term, setTerm] = useState(title || '');
 
   const clearInput = () => {
     if (!term) {
